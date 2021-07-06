@@ -6,7 +6,7 @@ import { popUp } from "../component/animate";
 
 const Modal = ({ toggle, setToggle, setWeatherData, input, setInput }) => {
   const API_KEY = "8a2a9bdae8ca48c29cd204847210706";
-  const base_url = `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${input}`;
+  const base_url = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${input}`;
 
   const exitModal = (e) => {
     e.preventDefault();
@@ -24,7 +24,6 @@ const Modal = ({ toggle, setToggle, setWeatherData, input, setInput }) => {
     axios
       .get(base_url)
       .then((data) => {
-        console.log(data);
         setWeatherData(data.data);
       })
       .catch((err) => {

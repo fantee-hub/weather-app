@@ -5,7 +5,7 @@ import Modal from "../component/Modal";
 
 const Weather = () => {
   const API_KEY = "8a2a9bdae8ca48c29cd204847210706";
-  const base_url = `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=lagos`;
+  const base_url = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=lagos`;
   const [weatherData, setWeatherData] = useState(null);
   const [toggle, setToggle] = useState(false);
   const [input, setInput] = useState("");
@@ -15,7 +15,6 @@ const Weather = () => {
       .get(base_url)
       .then((data) => {
         setWeatherData(data.data);
-        console.log(data.data);
       })
       .catch((err) => {
         console.log(err);
@@ -69,7 +68,7 @@ const Card = styled.div`
   color: #d4d4d4;
   min-width: 40%;
   margin: 0 auto;
-  padding: 3rem;
+  padding: 1.5rem;
   text-align: center;
   position: absolute;
   top: 50%;
